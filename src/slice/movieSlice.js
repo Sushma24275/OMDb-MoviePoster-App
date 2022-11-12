@@ -9,7 +9,6 @@ export const movieSlice = createSlice({
   },
   reducers: {
     addMovies: (state, action) => {
-      console.log("act", action.payload);
       state.allMovies.push(...action.payload.Search);
       state.allMovies = action.payload.Search;
       state.totalCount = action.payload.totalResults;
