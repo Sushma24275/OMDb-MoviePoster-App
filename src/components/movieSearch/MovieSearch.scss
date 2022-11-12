@@ -1,7 +1,7 @@
 @use "../../scss/" as *;
 
 .movie-search {
-  width: 100%;
+  width: 40%;
   margin-bottom: 50px;
 
   input {
@@ -14,13 +14,16 @@
     border-radius: $border-radius;
     color: $txt-color;
     font-family: $font-family;
+    border: 2px solid white;
   }
 
   button {
     position: absolute;
-    right: 0;
-    top: 2px;
+    right: 30%;
+    top: 5px;
+    margin-right: 5px;
     cursor: pointer;
+    border: 1px solid red;
 
     @include mobile {
       right: 1px;

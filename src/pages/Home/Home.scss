@@ -3,6 +3,8 @@
 .home__container {
   position: relative;
   flex-direction: column;
+  align-items: center;
+
   @include flex(space-between, center);
   .movie__container {
     display: grid;

@@ -29,10 +29,11 @@ const Home = () => {
     <div className="home__container">
       <MovieSearch className={""} />
       <div className="movie__container">
-        {allMovies.length > 0 &&
-          allMovies.map((item) => {
-            return <MovieCard {...item} />;
-          })}
+        {allMovies.length > 0
+          ? allMovies.map((item) => {
+              return <MovieCard {...item} />;
+            })
+          : `lets wait`}
       </div>
 
       {totalCount && (
