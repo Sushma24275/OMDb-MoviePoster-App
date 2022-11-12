@@ -1,18 +1,15 @@
 import "./App.scss";
 import Header from "./components/Header/Header";
-import MovieSearch from "./components/movieSearch/MovieSearch.jsx";
 import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home/Home.jsx";
 
 function App() {
   return (
-    <div>
+    <div className="app_container">
       <Header />
-      <MovieSearch className={"nan"} />
-
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/books" element={<BookList />} />
-      </Routes> */}
+      </Routes>
     </div>
   );
 }

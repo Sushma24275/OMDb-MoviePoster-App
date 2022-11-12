@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from "react";
 import "./MovieSearch.scss";
 import { getMovieDetails } from "../../api/omdbApi";
+import { useDispatch } from "react-redux";
+
+import { addMovies, addSearchTerm } from "../../slice/movieSlice";
+
 function MovieSearch({ className }) {
+  const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState("");
+
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
+    dispatch(addSearchTerm(e.target.value));
   };
   const handleSearch = async () => {
-    getMovieDetails(inputValue);
+    const movies = await getMovieDetails(inputValue, 1);
+    dispatch(addMovies(movies));
   };
 
   return (
