@@ -25,11 +25,10 @@ const Home = () => {
     const getData = async () => {
       setLoading(true);
       const movies = await getMovieDetails(searchTerm, page);
-
       dispatch(addMovies(movies));
       setLoading(false);
     };
-    page !== 1 && getData();
+    searchTerm && getData();
   }, [page]);
 
   return (

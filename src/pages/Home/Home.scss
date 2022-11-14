@@ -48,5 +48,8 @@
     background-color: rgba(247, 244, 244, 0.794);
     @include flex(center, center);
     border-radius: 30px;
+    @media screen and (max-width: 900px) {
+      width: 90%;
+    }
   }
 }
