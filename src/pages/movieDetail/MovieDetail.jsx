@@ -36,12 +36,11 @@ const MovieDetail = () => {
             <div className="movie-content__info">
               <h1 className="title">{movieData.Title}</h1>
               <div className="genres">
-                {movieData.Genre.length > 0 &&
-                  movieData.Genre.split("/").map((genre, i) => (
-                    <span key={i} className="genres__item">
-                      {genre}
-                    </span>
-                  ))}
+                {movieData.Genre.split(" ").map((genre, i) => (
+                  <span key={i} className="genres__item">
+                    {genre.replace(",", "")}
+                  </span>
+                ))}
                 <span className="year__item">{movieData.Year}</span>
               </div>
               <p className="overview">{movieData.Plot}</p>

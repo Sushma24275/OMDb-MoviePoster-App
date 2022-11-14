@@ -3,6 +3,9 @@
 .movie-search {
   width: 40%;
   margin-bottom: 50px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 
   input {
     width: 100%;
@@ -20,14 +23,14 @@
   button {
     position: absolute;
     right: 30%;
-    top: 5px;
-    margin-right: 5px;
+    top: 4px;
+    margin-right: 4px;
     cursor: pointer;
     border: 1px solid red;
 
     @include mobile {
-      right: 1px;
-      top: 1px;
+      right: 0px;
+      top: 3px;
     }
     &.btn {
       border: 4px solid transparent;

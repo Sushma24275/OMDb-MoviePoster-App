@@ -6,7 +6,10 @@
   align-items: center;
 
   .background_img {
-    background-image: linear-gradient(rgba(18, 5, 5, 0.084), rgb(203, 207, 203)),
+    background-image: linear-gradient(
+        rgba(18, 5, 5, 0.811),
+        rgba(203, 207, 203, 0.35)
+      ),
       url("../../assets/movieBackground.jpg");
     height: 100vh;
     width: 100vw;
@@ -16,6 +19,10 @@
     transform: translate(-50%, -50%);
     object-fit: cover;
     z-index: -1;
+
+    @media screen and (max-width: 768px) {
+      background-size: contain;
+    }
   }
 
   @include flex(space-between, center);
@@ -50,6 +57,9 @@
     border-radius: 30px;
     @media screen and (max-width: 900px) {
       width: 90%;
+    }
+    ul {
+      @include flex(center, center);
     }
   }
 }

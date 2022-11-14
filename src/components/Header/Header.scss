@@ -29,6 +29,14 @@
   }
 
   &__wrap {
+    @media screen and (max-width: 768px) {
+      img,
+      svg {
+        height: 100px;
+        width: 100px;
+      }
+    }
+
     height: 100%;
     padding: 0 2rem;
     @include flex(center, space-between);
@@ -48,10 +56,10 @@
       font-size: 1.5rem;
 
       @media screen and (max-width: 600px) {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
       }
       @media screen and (max-width: 400px) {
-        font-size: 0.8rem;
+        font-size: 1.8rem;
       }
 
       &::after {
