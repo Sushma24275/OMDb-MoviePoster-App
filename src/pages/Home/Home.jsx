@@ -46,7 +46,7 @@ const Home = () => {
             return <MovieCard {...item} />;
           })
         ) : (
-          <div class="background_img"></div>
+          <div class="text"></div>
         )}
       </div>
       {totalCount && (

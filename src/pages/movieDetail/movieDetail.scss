@@ -144,3 +144,12 @@
     }
   }
 }
+
+.loader {
+  height: 100px;
+  width: 100%;
+  flex-direction: column;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}

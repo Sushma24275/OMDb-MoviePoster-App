@@ -2,21 +2,26 @@ import React, { useEffect, useState } from "react";
 import "./movieDetail.scss";
 import { useLocation } from "react-router-dom";
 import { getMovieDescription } from "../../api/omdbApi";
+import CircularProgress from "@mui/material/CircularProgress";
+
 const MovieDetail = () => {
   let location = useLocation();
   const [movieData, setMovieData] = useState(undefined);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
+      setLoading(true);
       const response = await getMovieDescription(location.pathname.slice(1));
       setMovieData(response);
+      setLoading(false);
     };
     getData();
   }, []);
 
   return (
     <div>
-      {movieData && (
+      {movieData && !loading && (
         <>
           <div
             className="banner"
@@ -65,6 +70,12 @@ const MovieDetail = () => {
             </div>
           </div>
         </>
+      )}
+      {loading && (
+        <div className="loader">
+          <CircularProgress />
+          <p> Loading......</p>
+        </div>
       )}
     </div>
   );
