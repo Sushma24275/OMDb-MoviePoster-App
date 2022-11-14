@@ -37,17 +37,30 @@ const MovieDetail = () => {
               <h1 className="title">{movieData.Title}</h1>
               <div className="genres">
                 {movieData.Genre.length > 0 &&
-                  movieData.Genre.split(" /").map((genre, i) => (
+                  movieData.Genre.split("/").map((genre, i) => (
                     <span key={i} className="genres__item">
                       {genre}
                     </span>
                   ))}
+                <span className="year__item">{movieData.Year}</span>
               </div>
               <p className="overview">{movieData.Plot}</p>
               <div className="cast">
                 <div className="section__header">
-                  <h2>Cast</h2>
-                  {}
+                  <p>Cast : {movieData.Actors}</p>
+                  <p>Director : {movieData.Director}</p>
+                  <p>Runtime : {movieData.Runtime}</p>
+                  <p>Language : {movieData.Language}</p>
+
+                  <p>
+                    IMDB Rating : {movieData.imdbRating}{" "}
+                    <img
+                      class="icon-img"
+                      src="https://kellychi22.github.io/frontend-mentor-solutions/02-interactive-rating-component/images/icon-star.svg"
+                      alt="icon star"
+                    />
+                  </p>
+                  <p>IMDB Votes : {movieData.imdbVotes}</p>
                 </div>
               </div>
             </div>

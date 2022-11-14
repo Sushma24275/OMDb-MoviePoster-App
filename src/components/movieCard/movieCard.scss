@@ -1,6 +1,7 @@
 @use "../../scss/" as *;
 
 .movie-card {
+  transition: transform 0.2s ease-in;
   div {
     background-position: top;
     background-repeat: no-repeat;
@@ -14,5 +15,13 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+  &:hover {
+    .movie-title {
+      color: red;
+      margin-top: -10px;
+    }
+
+    transform: scale(1.2);
   }
 }

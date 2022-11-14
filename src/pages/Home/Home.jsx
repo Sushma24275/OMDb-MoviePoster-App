@@ -7,20 +7,27 @@ import Pagination from "@mui/material/Pagination";
 import { useDispatch } from "react-redux";
 import { getMovieDetails } from "../../api/omdbApi";
 import { addMovies } from "../../slice/movieSlice";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
+
 const Home = () => {
   const dispatch = useDispatch();
   const { allMovies, totalCount, searchTerm } = useSelector(
     (state) => state.movies
   );
   const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (event, value) => {
     setPage(value);
   };
   useEffect(() => {
     const getData = async () => {
+      setLoading(true);
       const movies = await getMovieDetails(searchTerm, page);
+
       dispatch(addMovies(movies));
+      setLoading(false);
     };
     page !== 1 && getData();
   }, [page]);
@@ -28,14 +35,21 @@ const Home = () => {
   return (
     <div className="home__container">
       <MovieSearch className={""} />
-      <div className="movie__container">
-        {allMovies.length > 0
-          ? allMovies.map((item) => {
-              return <MovieCard {...item} />;
-            })
-          : `lets wait`}
-      </div>
+      {loading && (
+        <Box sx={{ display: "flex" }}>
+          <CircularProgress />
+        </Box>
+      )}
 
+      <div className="movie__container">
+        {allMovies.length > 0 ? (
+          allMovies.map((item) => {
+            return <MovieCard {...item} />;
+          })
+        ) : (
+          <div class="background_img"></div>
+        )}
+      </div>
       {totalCount && (
         <div className="pagination__container">
           <Pagination

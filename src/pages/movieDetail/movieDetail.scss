@@ -85,6 +85,51 @@
         font-weight: 600;
         background-color: $body-bg;
       }
+      .year__item {
+        background-color: #2e333667;
+        border-radius: $border-radius;
+        margin-left: 10px;
+      }
+    }
+    .cast {
+      font-family: "Montserrat", helvetica, arial, sans-serif;
+      font-size: 16px;
+      line-height: 2.2;
+      font-weight: 400;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      width: 70%;
+      height: 70%;
+
+      background-color: hsl(213, 19%, 18%);
+      background-image: linear-gradient(
+        180deg,
+        hsl(213, 19%, 18%),
+        hsl(216, 12%, 10%)
+      );
+
+      @media screen and (max-width: 768px) {
+        font-size: 10px;
+      }
+    }
+    .overview {
+      background: linear-gradient(
+        to right,
+        #2e3336 0%,
+        #564b7c89 51%,
+        #2e2e2e 100%
+      );
+      padding: 0.5rem;
+      border-radius: 0.2rem;
+      margin-bottom: 1.2rem;
+    }
+    .colon {
+      padding: 10px;
+    }
+    .ratings {
+      padding: 0.5rem;
+      border-radius: 1rem;
+      width: 35%;
     }
   }
 }
